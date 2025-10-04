@@ -1,0 +1,23 @@
+[
+	{
+		"accountExternalReferenceCodes": [
+			"leo-auto-parts-distributor"
+		],
+		"scope": "account",
+		"warehouseExternalReferenceCode": "380RI2021"
+	},
+	{
+		"accountGroupExternalReferenceCodes": [
+			"north-american-accounts"
+		],
+		"scope": "account-group",
+		"warehouseExternalReferenceCode": "840VA50309"
+	},
+	{
+		"accountGroupExternalReferenceCodes": [
+			"north-american-accounts"
+		],
+		"scope": "account-group",
+		"warehouseExternalReferenceCode": "840NM87544"
+	}
+]
