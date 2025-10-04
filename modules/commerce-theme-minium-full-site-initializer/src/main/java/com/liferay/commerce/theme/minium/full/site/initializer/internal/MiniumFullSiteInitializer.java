@@ -9,6 +9,7 @@ import com.liferay.commerce.theme.minium.SiteInitializerDependencyResolver;
 import com.liferay.commerce.theme.minium.full.site.initializer.internal.importer.CommerceMLForecastImporter;
 import com.liferay.commerce.theme.minium.full.site.initializer.internal.importer.CommerceMLRecommendationImporter;
 import com.liferay.commerce.theme.minium.SiteInitializerDependencyResolverThreadLocal;
+import com.liferay.commerce.theme.minium.full.site.initializer.internal.importer.CommerceWarehouseEligibilityImporter;
 import com.liferay.document.library.kernel.model.DLFileEntry;
 import com.liferay.document.library.kernel.model.DLFolderConstants;
 import com.liferay.document.library.kernel.service.DLFileEntryLocalService;
@@ -83,6 +84,8 @@ public class MiniumFullSiteInitializer implements SiteInitializer {
 
 			_importCommerceMLRecommendations(groupId);
 
+			_importCommerceWarehouseEligibility(groupId);
+
 			_fixDLFileEntryPermissions(groupId);
 		}
 		catch (InitializationException initializationException) {
@@ -156,6 +159,15 @@ public class MiniumFullSiteInitializer implements SiteInitializer {
 			jsonArray, "MIN", groupId, user.getUserId());
 	}
 
+	private void _importCommerceWarehouseEligibility(long groupId) throws Exception {
+		JSONArray jsonArray = _getJSONArray("warehouse-eligibility.json");
+
+		User user = _userLocalService.getUser(PrincipalThreadLocal.getUserId());
+
+		_commerceWarehouseEligibilityImporter.importCommerceWarehouseEligibility(
+				jsonArray, groupId, user.getUserId());
+	}
+
 	private static final Log _log = LogFactoryUtil.getLog(
 		MiniumFullSiteInitializer.class);
 
@@ -164,6 +176,9 @@ public class MiniumFullSiteInitializer implements SiteInitializer {
 
 	@Reference
 	private CommerceMLRecommendationImporter _commerceMLRecommendationImporter;
+
+	@Reference
+	private CommerceWarehouseEligibilityImporter _commerceWarehouseEligibilityImporter;
 
 	@Reference
 	private DLFileEntryLocalService _dlFileEntryLocalService;
