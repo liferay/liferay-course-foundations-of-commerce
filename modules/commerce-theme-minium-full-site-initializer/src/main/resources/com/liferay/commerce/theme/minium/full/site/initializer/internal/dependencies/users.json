@@ -14,7 +14,7 @@
 		"jobTitle": "Parts Consultant",
 		"lastName": "Smith",
 		"male": true,
-		"password": "test",
+		"password": "learn",
 		"portrait": "purple_5.png",
 		"screenName": "mike.smith"
 	},
@@ -35,7 +35,7 @@
 		"jobTitle": "Purchasing Manager",
 		"lastName": "Collins",
 		"male": false,
-		"password": "test",
+		"password": "learn",
 		"portrait": "purple_6.png",
 		"screenName": "brenda.collins"
 	},
@@ -56,7 +56,7 @@
 		"jobTitle": "Purchasing Manager",
 		"lastName": "Moretti",
 		"male": true,
-		"password": "test",
+		"password": "learn",
 		"portrait": "green_4.png",
 		"screenName": "roberto.moretti"
 	},
@@ -70,7 +70,7 @@
 		"organizations": [
 			"United States"
 		],
-		"password": "test",
+		"password": "learn",
 		"portrait": "blue_7.png",
 		"roles": [
 			"Buyer",
@@ -92,7 +92,7 @@
 		"organizations": [
 			"Minium"
 		],
-		"password": "test",
+		"password": "learn",
 		"portrait": "blue_1.png",
 		"screenName": "jason.lee"
 	},
@@ -106,7 +106,7 @@
 		"organizations": [
 			"Minium"
 		],
-		"password": "test",
+		"password": "learn",
 		"portrait": "blue_2.png",
 		"roles": [
 			"Administrator"
