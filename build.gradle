@@ -1,7 +1,20 @@
-// Modify the initBundle task to delete the elasticsearch7 and osgi/state directories
+// Modify the initBundle task to delete the hsqlDatabase, doclibDir,
+// elasticsearch7 and osgi/state directories
+//
 // This ensures a clean build environment
+//
+// Dropping the DB and Doc Lib are unique to this course and shouldn't 
+// be copied for other courses
 tasks.named('initBundle').configure {
     doLast {
+        def hsqlDatabase = new File("${rootProject.projectDir}/bundles/data/hypersonic")
+        if (hsqlDatabase.exists()) {
+            delete(hsqlDatabase)
+        }
+        def doclibDir = new File("${rootProject.projectDir}/bundles/data/document_library")
+        if (doclibDir.exists()) {
+            delete(doclibDir)
+        }
         def es7Dir = new File("${rootProject.projectDir}/bundles/data/elasticsearch7")
         if (es7Dir.exists()) {
             delete(es7Dir)
